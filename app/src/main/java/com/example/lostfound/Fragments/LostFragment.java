@@ -60,7 +60,7 @@ public class LostFragment extends Fragment{
             }
         }
 
-        PostAdapter postAdapter = new PostAdapter(parentActivity,mFinalList);
+        PostAdapter postAdapter = new PostAdapter(parentActivity,mFinalList,"LOST");
         //PostAdapter postAdapter = new PostAdapter(parentActivity,postList);
         //postAdapter.getFilter().filter(search);
         listView.setAdapter(postAdapter);
@@ -87,7 +87,7 @@ public class LostFragment extends Fragment{
                 }
                 Collections.reverse(postList);
                 FragmentActivity parentActivity = (FragmentActivity) view.getContext();
-                PostAdapter postAdapter = new PostAdapter(parentActivity,postList);
+                PostAdapter postAdapter = new PostAdapter(parentActivity,postList,"LOST");
                 listView.setAdapter(postAdapter);
             }
             @Override

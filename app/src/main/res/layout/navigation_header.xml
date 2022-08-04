@@ -12,6 +12,7 @@
         android:layout_marginStart="16dp"
         android:text="Setting"
         android:textSize="30dp"
-        android:textColor="@color/tabTextColor" />
+        android:textColor="@color/tabTextColor"
+        android:layout_marginLeft="16dp" />
 
 </RelativeLayout>

@@ -40,27 +40,37 @@
             android:layout_marginRight="10dp"
             android:layout_above="@+id/button_upload"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="5dp" />
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentLeft="true" />
 
-        <Button
-            android:id="@+id/button_choose_image"
-            style="@style/Widget.LostFound.Button.TextButton"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="Choose file"
-            app:strokeColor="@color/button"
-            app:strokeWidth="1dp"/>
+            android:orientation="horizontal"
+            >
+            <Button
+                android:id="@+id/button_choose_image"
+                style="@style/Widget.LostFound.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Choose file"
+                app:strokeColor="@color/button"
+                app:strokeWidth="1dp"
+                android:layout_marginLeft="10dp" />
 
-        <Button
-            android:id="@+id/buttonCamera"
-            style="@style/Widget.LostFound.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="Open Camera"
-            app:strokeColor="@color/button"
-            app:strokeWidth="1dp"/>
+            <Button
+                android:id="@+id/buttonCamera"
+                style="@style/Widget.LostFound.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Open Camera"
+                app:strokeColor="@color/button"
+                app:strokeWidth="1dp"
+                android:layout_marginLeft="10dp" />
+        </LinearLayout>
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"

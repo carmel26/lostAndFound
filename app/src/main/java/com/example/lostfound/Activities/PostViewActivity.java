@@ -222,9 +222,11 @@ public class PostViewActivity extends AppCompatActivity implements View.OnClickL
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             imageUri = data.getData();
             Picasso.get().load(imageUri).resize(300,150).into(imageViewCard);
+            System.out.println("data: "+data.getData());
         }
         else if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK){
             Bitmap photo = (Bitmap) data.getExtras().get("data");
+            System.out.println("data: "+data.getData());
             imageViewCard.setImageBitmap(photo);
         }
     }
@@ -288,6 +290,7 @@ public class PostViewActivity extends AppCompatActivity implements View.OnClickL
         super.onStart();
 
         // Set item image into imageViewPicture
+        System.out.println("route: "+route);
         databaseReference = FirebaseDatabase.getInstance().getReference("/" + route + "/" + postId + "/IMAGE");
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

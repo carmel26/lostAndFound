@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#707070</color>
-    <color name="colorPrimaryDark">#707070</color>
+    <color name="colorPrimary">#4594E3</color>
+    <color name="colorPrimaryDark">#1E3353</color>
     <color name="colorAccent">#808e95</color>
     <color name="textColorPrimary">#37474f</color>
-    <color name="loginPageBackgroundColor">#FFFFFF</color>
-    <color name="registerPageBackgroundColor">#FFFFFF</color>
+    <color name="loginPageBackgroundColor">#B5BABC</color>
+    <color name="registerPageBackgroundColor">#B5BABC</color>
     <color name="colorControlActivated">#707070</color>
     <color name="appBar">#494949</color>
     <color name="button">@color/textColorPrimary</color>
     <color name="tabTextColor">#fff</color>
-    <color name="tabIndicatorColor">#ff4081</color>
+    <color name="tabIndicatorColor">#40D2FF</color>
+    <color name="blackText">#000000</color>
 </resources>
