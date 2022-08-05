@@ -24,8 +24,9 @@
                 android:layout_centerHorizontal="true"
                 android:background="@color/appBar"
                 android:text="Messages"
-                android:textSize="35dp"
-                android:textColor="@color/tabTextColor" />
+                android:drawableLeft="@drawable/message"
+                android:textColor="@color/tabTextColor"
+                android:textSize="25dp" />
 
         </RelativeLayout>
 

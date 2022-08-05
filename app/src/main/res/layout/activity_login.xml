@@ -70,8 +70,9 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonSignin"
@@ -80,20 +81,22 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
+                android:drawableLeft="@drawable/login"
                 android:text="@string/button_login"
                 app:strokeColor="@color/button"
-                app:strokeWidth="2dp"/>
+                app:strokeWidth="2dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/textViewSignup"
                 style="@style/Widget.LostFound.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginEnd="12dp"
                 android:layout_marginRight="12dp"
                 android:layout_toStartOf="@id/buttonSignin"
                 android:layout_toLeftOf="@id/buttonSignin"
-                android:text="@string/button_register"/>
+                android:text="@string/button_register" />
 
         </RelativeLayout>
 

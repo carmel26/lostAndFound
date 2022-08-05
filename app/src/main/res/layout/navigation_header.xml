@@ -10,8 +10,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:layout_marginStart="16dp"
+        android:drawableLeft="@drawable/setting"
         android:text="Setting"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:textColor="@color/tabTextColor"
         android:layout_marginLeft="16dp" />
 

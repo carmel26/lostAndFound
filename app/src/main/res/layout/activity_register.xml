@@ -84,8 +84,9 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonRegister"
@@ -94,6 +95,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
+                android:drawableLeft="@drawable/register"
                 android:text="@string/button_register"
                 app:strokeColor="@color/button"
                 app:strokeWidth="2dp"/>

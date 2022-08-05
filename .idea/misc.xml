@@ -3,8 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.17916666666666667" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/background.xml" value="0.1953125" />
+        <entry key="app/src/main/res/drawable/callgray.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/cancelbutton.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/defaultperson.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/login.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/mapgray.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/message.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/messagegray.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/opencamera.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/openfromdevice.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/plus.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/register.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/savebutton.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/send.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/setting.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.12" />
         <entry key="app/src/main/res/layout/activity_message.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/activity_message_view.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/activity_post.xml" value="0.17916666666666667" />

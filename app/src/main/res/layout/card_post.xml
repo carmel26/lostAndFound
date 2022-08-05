@@ -21,7 +21,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="8dp"
                 android:src="@drawable/avatar"  />
 
 
@@ -34,7 +34,8 @@
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:gravity="center"
+                    android:layout_marginTop="2dp"
+                    android:gravity="left"
                     android:text="Title"
                     android:ellipsize="end"
                     android:maxLines="1"/>
@@ -44,8 +45,8 @@
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:layout_marginTop="5dp"
-                    android:gravity="center"
+                    android:layout_marginTop="2dp"
+                    android:gravity="left"
                     android:text="Description"
                     android:ellipsize="end"
                     android:maxLines="3"/>

@@ -43,6 +43,7 @@
             android:layout_height="wrap_content"
             app:strokeColor="@color/button"
             app:strokeWidth="2dp"
+            android:drawableLeft="@drawable/send"
             android:text="Send"
             android:textSize="15dp" />
 

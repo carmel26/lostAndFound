@@ -18,7 +18,7 @@
             android:id="@+id/imageViewBack"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="8dp"
             android:layout_marginLeft="5dp"
             android:src="@drawable/back" />
 
@@ -44,31 +44,36 @@
             android:layout_alignParentLeft="true" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
             <Button
                 android:id="@+id/button_choose_image"
                 style="@style/Widget.LostFound.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:drawableLeft="@drawable/openfromdevice"
                 android:text="Choose file"
                 app:strokeColor="@color/button"
-                app:strokeWidth="1dp"
-                android:layout_marginLeft="10dp" />
+                app:strokeWidth="1dp" />
 
             <Button
                 android:id="@+id/buttonCamera"
                 style="@style/Widget.LostFound.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:drawableLeft="@drawable/opencamera"
                 android:text="Open Camera"
                 app:strokeColor="@color/button"
-                app:strokeWidth="1dp"
-                android:layout_marginLeft="10dp" />
+                app:strokeWidth="1dp" />
         </LinearLayout>
 
 
@@ -132,10 +137,12 @@
         <Button
             android:id="@+id/buttonSave"
             style="@style/Widget.LostFound.Button.TextButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="10dp"
             android:text="Save Information"
+            android:drawableLeft ="@drawable/savebutton"
             app:strokeColor="@color/button"
             app:strokeWidth="1dp"/>
 

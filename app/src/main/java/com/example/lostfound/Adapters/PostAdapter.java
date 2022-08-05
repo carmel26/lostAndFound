@@ -60,7 +60,16 @@ public class PostAdapter extends ArrayAdapter<Post> {
         Post post = postList.get(position);
 
         textViewTitle.setText(post.getTitle());
-        textViewDescription.setText(post.getDescription());
+        String description = "";
+        if(post.getDescription().length() > 30){
+            for (int i = 0; i < 30; i++) {
+                description += post.getDescription().charAt(i);
+            }
+            description += "...";
+        }else{
+            description = post.getDescription();
+        }
+        textViewDescription.setText(description);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("/" + type + "/" + post.getPostId() + "/IMAGE");
 
