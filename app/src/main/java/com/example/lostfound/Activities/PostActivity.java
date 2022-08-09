@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -42,6 +43,7 @@ import com.squareup.picasso.Picasso;
 import java.io.ByteArrayOutputStream;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class PostActivity extends AppCompatActivity implements View.OnClickListener {
@@ -55,6 +57,7 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
     private StorageReference storageRef;
 
     private ImageView imageView;
+    private Object dataCamera;
     private EditText editTextTitle, editTextDescription;
     private Button buttonPost, buttonCancel, buttonChooseImage, buttonCamera;
 
@@ -195,8 +198,10 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
                         }
                     });
         }
-        else {
+        else if (path != null){
             cameraUpload(path);
+        }else{
+
         }
     }
 
@@ -260,15 +265,29 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
         }
         else if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK){
             Bitmap photo = (Bitmap) data.getExtras().get("data");
+            dataCamera =  data.getExtras().get("data");
             imageView.setImageBitmap(photo);
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onClick(View view) {
         if (view == buttonPost){
             // Post
-            onPost();
+            System.out.println("IMAGE URI: ");
+            System.out.println(imageUri);
+            System.out.println("CAMERA URI: ");
+            System.out.println(dataCamera);
+            if (imageUri == null &&
+                    dataCamera == null){
+                Toast.makeText(PostActivity.this,
+                        "Please Provide a Picture of your Lost or Found first... Thank you...",
+                        Toast.LENGTH_LONG).show();
+            }else{
+                // on peut enregistre l'information
+                onPost();
+            }
             finish();
             startActivity(new Intent(this, MainActivity.class));
         }

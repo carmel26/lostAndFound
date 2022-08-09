@@ -100,7 +100,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
                                         // Successfully registered user, please verify through user email
-                                        Toast.makeText(context, "Please check email for verification.", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(context, "Please check email 'inbox' or 'spam' for verification.", Toast.LENGTH_LONG).show();
                                     }
                                     else{
                                         Toast.makeText(context, task.getException().getMessage() , Toast.LENGTH_SHORT).show();

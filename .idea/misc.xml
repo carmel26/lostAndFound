@@ -30,6 +30,7 @@
         <entry key="app/src/main/res/layout/card_message.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/card_post.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/fragment_found.xml" value="0.17916666666666667" />
+        <entry key="app/src/main/res/layout/fragment_lost.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/navigation_header.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/pop_up.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/menu/navigation_items.xml" value="0.1" />

@@ -11,6 +11,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -21,7 +22,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lostfound.Classes.GMailSender;
+import com.example.lostfound.Classes.Message;
 import com.example.lostfound.Classes.SecurityQuestions;
+import com.example.lostfound.Classes.User;
 import com.example.lostfound.Fragments.LostFragment;
 import com.example.lostfound.R;
 import com.github.gcacace.signaturepad.views.SignaturePad;
@@ -37,6 +40,7 @@ import com.google.firebase.storage.StorageTask;
 import com.squareup.picasso.Picasso;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class PostViewActivity extends AppCompatActivity implements View.OnClickListener {
@@ -115,6 +119,7 @@ public class PostViewActivity extends AppCompatActivity implements View.OnClickL
 
         // Open up camera
         buttonCamera.setOnClickListener(new View.OnClickListener(){
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View view){
                 if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
@@ -222,11 +227,9 @@ public class PostViewActivity extends AppCompatActivity implements View.OnClickL
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             imageUri = data.getData();
             Picasso.get().load(imageUri).resize(300,150).into(imageViewCard);
-            System.out.println("data: "+data.getData());
         }
         else if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK){
             Bitmap photo = (Bitmap) data.getExtras().get("data");
-            System.out.println("data: "+data.getData());
             imageViewCard.setImageBitmap(photo);
         }
     }
@@ -244,6 +247,7 @@ public class PostViewActivity extends AppCompatActivity implements View.OnClickL
             finish();
             startActivity(new Intent(this, LoginActivity.class));
         }
+
 
         intent = getIntent();
 

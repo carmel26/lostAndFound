@@ -61,8 +61,8 @@ public class PostAdapter extends ArrayAdapter<Post> {
 
         textViewTitle.setText(post.getTitle());
         String description = "";
-        if(post.getDescription().length() > 30){
-            for (int i = 0; i < 30; i++) {
+        if(post.getDescription().length() > 34){
+            for (int i = 0; i < 34; i++) {
                 description += post.getDescription().charAt(i);
             }
             description += "...";
