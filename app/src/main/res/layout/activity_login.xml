@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/loginPageBackgroundColor"
-    tools:context=".Activities.LoginActivity">
+    tools:context=".Activities.LoginActivity"
+    android:layout_margin="6dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,6 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/helveticabold"
             android:layout_marginBottom="50dp"
             android:text="@string/app_name"
             android:textAppearance="@style/TextAppearance.LostFound.Title" />
@@ -35,6 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/robotobold"
             android:text="@string/button_login"
             android:textAppearance="@style/TextAppearance.LostFound.Large" />
 
@@ -42,6 +45,7 @@
             style="@style/Widget.LostFound.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/robotoregular"
             android:hint="@string/hint_email">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -49,6 +53,7 @@
                 style="@style/Widget.LostFound.TextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/robotoregular"
                 android:inputType="text"
                 android:maxLines="1" />
 
@@ -58,11 +63,13 @@
             style="@style/Widget.LostFound.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/robotoregular"
             android:hint="@string/hint_password">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
+                android:fontFamily="@font/robotoregular"
                 style="@style/Widget.LostFound.TextInputLayout"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword" />
@@ -80,6 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
+                android:fontFamily="@font/helveticabold"
                 android:layout_alignParentRight="true"
                 android:drawableLeft="@drawable/login"
                 android:text="@string/button_login"
@@ -93,6 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginEnd="12dp"
+                android:fontFamily="@font/helveticabold"
                 android:layout_marginRight="12dp"
                 android:layout_toStartOf="@id/buttonSignin"
                 android:layout_toLeftOf="@id/buttonSignin"
@@ -107,12 +116,16 @@
 
             <TextView
                 android:id="@+id/textViewResetPassword"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_margin="10dp"
-                android:text="Reset Password" />
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/helveticabold"
+                android:layout_marginBottom="10dp"
+                android:text="Reset Password"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
 
         </RelativeLayout>
 

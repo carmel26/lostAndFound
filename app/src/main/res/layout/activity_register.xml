@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/registerPageBackgroundColor"
-    tools:context=".Activities.RegisterActivity">
+    tools:context=".Activities.RegisterActivity"
+    android:layout_margin="6dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,6 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="50dp"
+            android:fontFamily="@font/helveticabold"
             android:text="@string/app_name"
             android:textAppearance="@style/TextAppearance.LostFound.Title" />
 
@@ -37,11 +39,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/button_register"
+            android:fontFamily="@font/robotobold"
             android:textAppearance="@style/TextAppearance.LostFound.Large" />
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.LostFound.TextInputLayout"
             android:layout_width="match_parent"
+            android:fontFamily="@font/robotoregular"
             android:layout_height="wrap_content"
             android:hint="@string/hint_email" >
 
@@ -50,6 +54,7 @@
                 android:layout_width="match_parent"
                 style="@style/Widget.LostFound.TextInputLayout"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/robotoregular"
                 android:inputType="text"
                 android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -58,12 +63,14 @@
             style="@style/Widget.LostFound.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/robotoregular"
             android:hint="@string/hint_password">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/robotoregular"
                 style="@style/Widget.LostFound.TextInputLayout"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -71,6 +78,7 @@
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.LostFound.TextInputLayout"
             android:layout_width="match_parent"
+            android:fontFamily="@font/robotoregular"
             android:layout_height="wrap_content"
             android:hint="@string/hint_confirm_password"
             app:errorEnabled="true">
@@ -79,6 +87,7 @@
                 android:id="@+id/editTextConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/robotoregular"
                 style="@style/Widget.LostFound.TextInputLayout"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -95,6 +104,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
+                android:fontFamily="@font/robotobold"
                 android:drawableLeft="@drawable/register"
                 android:text="@string/button_register"
                 app:strokeColor="@color/button"
@@ -107,6 +117,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="12dp"
                 android:layout_marginRight="12dp"
+                android:fontFamily="@font/robotobold"
                 android:layout_toStartOf="@id/buttonRegister"
                 android:layout_toLeftOf="@id/buttonRegister"
                 android:text="@string/button_login" />

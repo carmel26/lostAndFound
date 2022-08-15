@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.ProfileActivity">
+    tools:context=".Activities.ProfileActivity"
+    android:layout_margin="6dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,6 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="10dp"
+                android:fontFamily="@font/robotobold"
                 android:layout_marginLeft="10dp"
                 android:drawableLeft="@drawable/openfromdevice"
                 android:text="Choose file"
@@ -69,6 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="10dp"
+                android:fontFamily="@font/helveticabold"
                 android:layout_marginLeft="10dp"
                 android:drawableLeft="@drawable/opencamera"
                 android:text="Open Camera"
@@ -81,11 +84,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:fontFamily="@font/robotoregular"
             android:layout_marginRight="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextName"
                 android:hint="@string/hint_enter_name"
+                android:fontFamily="@font/robotoregular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -95,12 +100,14 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/robotoregular"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextSchool"
                 android:hint="@string/hint_enter_school"
+                android:fontFamily="@font/robotoregular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -109,12 +116,14 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/robotoregular"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextId"
                 android:hint="@string/hint_enter_id"
+                android:fontFamily="@font/robotoregular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -124,11 +133,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:fontFamily="@font/robotoregular"
             android:layout_marginRight="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextPhoneNum"
                 android:hint="@string/hint_enter_phone_num"
+                android:fontFamily="@font/robotoregular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -141,6 +152,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
+            android:fontFamily="@font/robotobold"
             android:text="Save Information"
             android:drawableLeft ="@drawable/savebutton"
             app:strokeColor="@color/button"

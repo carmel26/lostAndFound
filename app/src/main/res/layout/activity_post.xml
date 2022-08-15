@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.PostActivity">
+    tools:context=".Activities.PostActivity"
+    android:layout_margin="6dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,7 +30,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
+                android:fontFamily="@font/helveticabold"
                 android:layout_marginRight="5dp"
+                android:textSize="20dp"
                 android:gravity="center|top"
                 android:hint="@string/hint_title"/>
 
@@ -66,6 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:text="Choose file"
+                android:fontFamily="@font/helveticabold"
                 android:drawableLeft="@drawable/openfromdevice"
                 app:strokeColor="@color/button"
                 app:strokeWidth="1dp"
@@ -76,6 +80,7 @@
                 style="@style/Widget.LostFound.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/helveticabold"
                 android:layout_marginStart="16dp"
                 android:drawableLeft="@drawable/opencamera"
                 android:text="Open Camera"
@@ -95,6 +100,8 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:gravity="center"
+                android:textSize="18dp"
+                android:fontFamily="@font/robotoregular"
                 android:lines="4"
                 android:hint="@string/hint_description"/>
 
@@ -113,6 +120,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="60dp"
+                android:fontFamily="@font/helveticabold"
                 android:drawableLeft="@drawable/savebutton"
                 android:text="Post"
                 app:strokeColor="@color/button"
@@ -127,8 +135,9 @@
                 android:layout_marginRight="60dp"
                 android:drawableLeft="@drawable/cancelbutton"
                 android:text="Cancel"
+                android:fontFamily="@font/helveticabold"
                 app:strokeColor="@color/button"
-                app:strokeWidth="1dp"/>
+                app:strokeWidth="1dp" />
 
         </RelativeLayout>
 

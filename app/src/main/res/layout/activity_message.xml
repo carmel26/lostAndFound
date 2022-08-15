@@ -6,13 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.MessageActivity"
-    android:layout_margin="8dp">
+    android:layout_margin="6dp">
 
     <ListView
         android:id="@+id/listViewMessage"
         android:layout_height="fill_parent"
         android:layout_width="wrap_content"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="40dp"
         android:dividerHeight="0dp"
         android:divider="@null"/>
 
@@ -33,6 +33,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_weight="1"
+            android:fontFamily="@font/robotoregular"
             android:hint="Enter message"
             android:background="@android:color/transparent"
             android:maxLines="6"/>
@@ -44,6 +45,7 @@
             android:layout_height="wrap_content"
             app:strokeColor="@color/button"
             app:strokeWidth="2dp"
+            android:fontFamily="@font/helveticabold"
             android:drawableLeft="@drawable/send"
             android:text="Send"
             android:textSize="15dp" />

@@ -8,12 +8,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="10dp"
         android:drawableLeft="@drawable/setting"
+        android:fontFamily="@font/robotobold"
         android:text="Setting"
-        android:textSize="25dp"
         android:textColor="@color/tabTextColor"
-        android:layout_marginLeft="16dp" />
+        android:textSize="25dp" />
 
 </RelativeLayout>

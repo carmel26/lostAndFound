@@ -84,6 +84,16 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             return;
         }
 
+        // test if the email is from Mandela
+        final String[] myEmail = email.split("@");
+
+        if (!myEmail[1].equalsIgnoreCase("nm-aist.ac.tz")){
+            System.out.println("Not from mandela "+myEmail[1]);
+            Toast.makeText(context, "Please provide a Nelson Mandela Email for Registration ", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+
         progressDialog.setMessage("Registering User...");
         progressDialog.show();
         System.out.println(email +" email "+password+" password");

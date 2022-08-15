@@ -263,7 +263,7 @@ public class PostViewActivity extends AppCompatActivity implements View.OnClickL
 
         buttonCall = (Button) findViewById(R.id.buttonCall);
         buttonMessage = (Button) findViewById(R.id.buttonMessage);
-        buttonTrack = (Button) findViewById(R.id.buttonTrack);
+//        buttonTrack = (Button) findViewById(R.id.buttonTrack);
 
         myDialog = new Dialog(this);
 
@@ -285,7 +285,7 @@ public class PostViewActivity extends AppCompatActivity implements View.OnClickL
         // Set listeners
         textViewUser.setOnClickListener(this);
         buttonMessage.setOnClickListener(this);
-        buttonTrack.setOnClickListener(this);
+//        buttonTrack.setOnClickListener(this);
         buttonCall.setOnClickListener(this);
     }
 

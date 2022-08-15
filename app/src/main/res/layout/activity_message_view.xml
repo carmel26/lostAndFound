@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.MessageViewActivity">
+    tools:context=".Activities.MessageViewActivity"
+    android:layout_margin="6dp">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
@@ -21,10 +22,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="4dp"
                 android:background="@color/appBar"
-                android:text="Messages"
                 android:drawableLeft="@drawable/message"
+                android:fontFamily="@font/helveticabold"
+                android:text="Messages"
                 android:textColor="@color/tabTextColor"
                 android:textSize="25dp" />
 
@@ -35,6 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/appBar"
+            android:fontFamily="@font/robotoregular"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
@@ -54,6 +58,7 @@
         android:layout_height="match_parent"
         android:layout_below="@id/appBar"
         android:divider="@null"
+        android:layout_marginTop="5dp"
         android:dividerHeight="0dp" />
 
 </RelativeLayout>

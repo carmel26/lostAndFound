@@ -10,6 +10,7 @@
         <entry key="app/src/main/res/drawable/login.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/mapgray.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/message.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/message_border.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/messagegray.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/opencamera.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/openfromdevice.xml" value="0.1" />
@@ -20,19 +21,21 @@
         <entry key="app/src/main/res/drawable/setting.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.12" />
-        <entry key="app/src/main/res/layout/activity_message.xml" value="0.17916666666666667" />
+        <entry key="app/src/main/res/layout/activity_message.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_message_view.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/activity_post.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/activity_post_view.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/activity_profile_view.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.17916666666666667" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/card_message.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/card_post.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/fragment_found.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/fragment_lost.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/navigation_header.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/layout/pop_up.xml" value="0.17916666666666667" />
+        <entry key="app/src/main/res/layout/spashscree.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/menu/navigation_items.xml" value="0.1" />
       </map>
     </option>

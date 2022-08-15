@@ -3,7 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:paddingBottom="8dp"
+    android:background="@drawable/message_border">
 
     <TextView
         android:id="@+id/textViewUser"
@@ -11,15 +14,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/defaultperson"
+        android:layout_marginLeft="8dp"
+        android:textSize="16dp"
+        android:fontFamily="@font/robotobold"
         android:text="User" />
 
-    <TextView
-        android:id="@+id/textViewMessage"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Message"
-        android:maxLines="3"/>
+        android:background="@drawable/message_txt_border"
+        >
+        <TextView
+            android:id="@+id/textViewMessage"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Message"
+            android:textSize="14dp"
+            android:fontFamily="@font/robotoregular"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="4dp"
+            android:maxLines="3"/>
+    </RelativeLayout>
+
 
 </LinearLayout>
 

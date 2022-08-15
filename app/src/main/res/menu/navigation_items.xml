@@ -1,11 +1,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
         <item
             android:id="@+id/navigation_item_1"
+            android:fontFamily="@font/robotobold"
             android:title="Profile" />
         <item
             android:id="@+id/navigation_item_2"
+            android:fontFamily="@font/robotobold"
             android:title="Messages" />
         <item
             android:id="@+id/navigation_item_3"
+            android:fontFamily="@font/robotobold"
             android:title="Logout" />
 </menu>
