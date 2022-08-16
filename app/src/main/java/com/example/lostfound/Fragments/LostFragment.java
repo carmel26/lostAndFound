@@ -43,6 +43,7 @@ public class LostFragment extends Fragment{
                                POST_ID = "com.example.lostfound.postid",
                                POST_USER_ID = "com.example.lostfound.postuserid",
                                POST_USER_EMAIL = "com.example.lostfound.postuseremail",
+                               POST_STATUS = "com.example.lostfound.status",
                                POST_ROUTE = "com.example.lostfound.postpage";
 
     public LostFragment(){
@@ -104,6 +105,7 @@ public class LostFragment extends Fragment{
                 intent.putExtra(POST_USER, post.getUser());
                 intent.putExtra(POST_TITLE, post.getTitle());
                 intent.putExtra(POST_DESCRIPTION, post.getDescription());
+                intent.putExtra(POST_STATUS, post.getStatus());
                 intent.putExtra(POST_PHONE_NUMBER, post.getPhoneNum());
                 intent.putExtra(POST_ID, post.getPostId());
                 intent.putExtra(POST_USER_ID, post.getUserId());

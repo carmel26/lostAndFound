@@ -20,6 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 import androidx.annotation.Nullable;
@@ -41,6 +42,7 @@ public class FoundFragment extends Fragment{
                                POST_DESCRIPTION = "com.example.lostfound.postdescription",
                                POST_PHONE_NUMBER = "com.example.lostfound.postphonenumber",
                                POST_ID = "com.example.lostfound.postid",
+                               POST_STATUS = "com.example.lostfound.status",
                                POST_USER_ID = "com.example.lostfound.postuserid",
                                POST_USER_EMAIL = "com.example.lostfound.postuseremail",
                                POST_ROUTE = "com.example.lostfound.postpage";
@@ -82,8 +84,13 @@ public class FoundFragment extends Fragment{
             public void onDataChange(DataSnapshot dataSnapshot) {
                 postList.clear();
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+
                     Post post = postSnapshot.child("INFO").getValue(Post.class);
-                    postList.add(post);
+
+                    if (post.getStatus().equalsIgnoreCase("false")){
+                        postList.add(post);
+                    }
+
                 }
                 Collections.reverse(postList);
                 FragmentActivity parentActivity = (FragmentActivity) view.getContext();
@@ -105,6 +112,7 @@ public class FoundFragment extends Fragment{
                 intent.putExtra(POST_TITLE, post.getTitle());
                 intent.putExtra(POST_DESCRIPTION, post.getDescription());
                 intent.putExtra(POST_PHONE_NUMBER, post.getPhoneNum());
+                intent.putExtra(POST_STATUS, post.getStatus());
                 intent.putExtra(POST_ID, post.getPostId());
                 intent.putExtra(POST_USER_ID, post.getUserId());
                 intent.putExtra(POST_USER_EMAIL, post.getEmail());

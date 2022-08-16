@@ -94,11 +94,19 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         imageView.setDrawingCacheEnabled(true);
         imageView.buildDrawingCache();
         Bitmap bitmap = ((BitmapDrawable) imageView.getDrawable()).getBitmap();
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-        byte[] data = baos.toByteArray();
 
-        UploadTask uploadTask = storageRef.putBytes(data);
+
+        String pathTes = "Profile/"+System.currentTimeMillis();
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+// this will compress an image that the uplaod and download would be faster
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        byte[] data = baos.toByteArray();
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageReference = storage.getReference();
+        StorageReference reference = storageReference.child(pathTes);
+        UploadTask uploadTask = reference.putBytes(data);
+
+
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception exception) {

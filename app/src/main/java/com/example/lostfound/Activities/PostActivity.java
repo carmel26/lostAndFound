@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Base64;
 import android.view.View;
 import android.view.WindowManager;
 import android.webkit.MimeTypeMap;
@@ -110,7 +111,7 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
         buttonChooseImage.setOnClickListener(this);
 
         // Set storage
-        storageRef = FirebaseStorage.getInstance().getReference("/Post");
+        storageRef = FirebaseStorage.getInstance().getReference("/Post/");
     }
 
     // Open file to choose image
@@ -134,11 +135,19 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
         imageView.setDrawingCacheEnabled(true);
         imageView.buildDrawingCache();
         Bitmap bitmap = ((BitmapDrawable) imageView.getDrawable()).getBitmap();
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-        byte[] data = baos.toByteArray();
 
-        UploadTask uploadTask = storageRef.putBytes(data);
+
+        String pathTes = "Post/"+System.currentTimeMillis();
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+// this will compress an image that the uplaod and download would be faster
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        byte[] data = baos.toByteArray();
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageReference = storage.getReference();
+        StorageReference reference = storageReference.child(pathTes);
+        UploadTask uploadTask = reference.putBytes(data);
+
+
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception exception) {
@@ -174,6 +183,7 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
                             progressBar.setProgress(0);
                         }
                     }, 500);
+
                     Toast.makeText(PostActivity.this, "Upload successful", Toast.LENGTH_LONG).show();
                     Task<Uri> urlTask = taskSnapshot.getStorage().getDownloadUrl();
                     while (!urlTask.isSuccessful());
@@ -224,7 +234,7 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
                         // Upload to firebase
                         String postUID = databaseReference.push().getKey();
                         User user = postSnapshot.child("INFO").getValue(User.class);
-                        Post post = new Post(user.getName(),title,desc,user.getPhoneNum(),userId,postUID,userEmail);
+                        Post post = new Post(user.getName(),title,desc,user.getPhoneNum(),userId,postUID,userEmail,"false");
                         databaseReference = FirebaseDatabase.getInstance().getReference("/" + route);
                         databaseReference.child(postUID).child("INFO").setValue(post);
                         uploadFile(postUID);
@@ -275,10 +285,7 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         if (view == buttonPost){
             // Post
-            System.out.println("IMAGE URI: ");
-            System.out.println(imageUri);
-            System.out.println("CAMERA URI: ");
-            System.out.println(dataCamera);
+
             if (imageUri == null &&
                     dataCamera == null){
                 Toast.makeText(PostActivity.this,

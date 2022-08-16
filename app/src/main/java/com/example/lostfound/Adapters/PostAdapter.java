@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,6 +33,7 @@ public class PostAdapter extends ArrayAdapter<Post> {
     private String  imageUrl,type;
     private DatabaseReference databaseReference;
 
+
     private List<Post> postList;
 
     private TextView textViewTitle, textViewDescription;
@@ -54,12 +56,13 @@ public class PostAdapter extends ArrayAdapter<Post> {
         textViewTitle = (TextView) view.findViewById(R.id.textViewTitle);
         textViewDescription = (TextView)view.findViewById(R.id.textViewDescription);
 
-
         textViewDescription.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
 
         Post post = postList.get(position);
 
-        textViewTitle.setText(post.getTitle());
+//        myButton.setEnabled(false);
+
+            textViewTitle.setText(post.getTitle());
         String description = "";
         if(post.getDescription().length() > 34){
             for (int i = 0; i < 34; i++) {

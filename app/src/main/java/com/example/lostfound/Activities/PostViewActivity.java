@@ -14,6 +14,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -22,9 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lostfound.Classes.GMailSender;
-import com.example.lostfound.Classes.Message;
 import com.example.lostfound.Classes.SecurityQuestions;
-import com.example.lostfound.Classes.User;
 import com.example.lostfound.Fragments.LostFragment;
 import com.example.lostfound.R;
 import com.github.gcacace.signaturepad.views.SignaturePad;
@@ -54,7 +53,7 @@ public class PostViewActivity extends AppCompatActivity implements View.OnClickL
     private StorageTask uploadTask;
     private StorageReference storageRef;
 
-    private ImageView imageViewPicture, imageViewProfile, imageViewCard, imageViewClose;
+    private ImageView imageViewPicture, imageViewProfile, imageViewCard, imageViewClose,imageViewCheck;
     private TextView textViewUser;
     private TextInputEditText textViewTitle, textViewDescription, editTextQuestion1, editTextQuestion2, editTextQuestion3;
     private Button buttonCall, buttonMessage, buttonTrack, buttonSubmit, buttonCamera;
@@ -82,10 +81,10 @@ public class PostViewActivity extends AppCompatActivity implements View.OnClickL
         new Thread(new Runnable() {
             public void run() {
                 try {
-                    GMailSender sender = new GMailSender("lostfoundee32f@gmail.com","A24518190d");
+                    GMailSender sender = new GMailSender("carmelnkeshimana2020@gmail.com","carmel@1994;GM2022_4");
                     //sender.addAttachment(Environment.getExternalStorageDirectory().getPath()+"/image.jpg");
                     sender.sendMail(
-                            "Found Item", "You have an item that someone lost.","lostfoundee32f@gmail.com",email);
+                            "Found Item", "You have an item that someone lost.","carmelnkeshimana2020@gmail.com",email);
                 }
                 catch (Exception e) {
                     Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
@@ -256,6 +255,7 @@ public class PostViewActivity extends AppCompatActivity implements View.OnClickL
         // Initialize
         imageViewPicture = (ImageView) findViewById(R.id.imageViewPicture);
         imageViewProfile = (ImageView) findViewById(R.id.imageViewProfile);
+        imageViewCheck = (ImageView) findViewById(R.id.imageViewCheck) ;
 
         textViewTitle = (TextInputEditText) findViewById(R.id.textViewTitle);
         textViewDescription = (TextInputEditText) findViewById(R.id.textViewDescription);
@@ -282,11 +282,35 @@ public class PostViewActivity extends AppCompatActivity implements View.OnClickL
         textViewTitle.setEnabled(false);
         textViewDescription.setEnabled(false);
 
+        if (intent.getStringExtra(LostFragment.POST_STATUS).equalsIgnoreCase("true")){
+            ViewGroup layout1 = (ViewGroup) buttonMessage.getParent();
+            if(null!=layout1) //for safety only  as you are doing onClick
+                layout1.removeView(buttonMessage);
+//                buttonMessage.setEnabled(false);
+            ViewGroup layout2 = (ViewGroup) buttonCall.getParent();
+            if(null!=layout2) //for safety only  as you are doing onClick
+                layout2.removeView(buttonCall);
+//                buttonCall.setEnabled(false);
+            ViewGroup layout3 = (ViewGroup) imageViewCheck.getParent();
+            if(null!=layout3) //for safety only  as you are doing onClick
+                layout3.removeView(imageViewCheck);
+//                imageViewCheck.setEnabled(false);
+        }else{
+            // Set listeners
+            buttonMessage.setOnClickListener(this);
+            buttonCall.setOnClickListener(this);
+
+            final String userEmail = firebaseAuth.getCurrentUser().getEmail();
+            if (intent.getStringExtra(LostFragment.POST_USER_EMAIL).equalsIgnoreCase(userEmail)){
+                imageViewCheck.setOnClickListener(this);
+            }else{
+                ViewGroup layout3 = (ViewGroup) imageViewCheck.getParent();
+                if(null!=layout3) //for safety only  as you are doing onClick
+                    layout3.removeView(imageViewCheck);
+            }
+        }
         // Set listeners
         textViewUser.setOnClickListener(this);
-        buttonMessage.setOnClickListener(this);
-//        buttonTrack.setOnClickListener(this);
-        buttonCall.setOnClickListener(this);
     }
 
     @Override
@@ -363,6 +387,10 @@ public class PostViewActivity extends AppCompatActivity implements View.OnClickL
             Intent intent = new Intent(getApplicationContext(), ProfileViewActivity.class);
             intent.putExtra(POST_PROFILE,userId);
             startActivity(intent);
+        }else if (view == imageViewCheck){
+            Toast.makeText(context, "Object restute with success!!", Toast.LENGTH_SHORT).show();
+            databaseReference = FirebaseDatabase.getInstance().getReference("/" + route + "/" + postId + "/INFO");
+            databaseReference.child("status").setValue("true");
         }
     }
 }

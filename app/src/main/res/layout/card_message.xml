@@ -1,42 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<FrameLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content">
+
+<com.google.android.material.card.MaterialCardView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    android:paddingBottom="8dp"
-    android:background="@drawable/message_border">
+    android:layout_margin="5dp">
 
-    <TextView
-        android:id="@+id/textViewUser"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/defaultperson"
-        android:layout_marginLeft="8dp"
-        android:textSize="16dp"
-        android:fontFamily="@font/robotobold"
-        android:text="User" />
+        android:orientation="horizontal">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/message_txt_border"
-        >
-        <TextView
-            android:id="@+id/textViewMessage"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/imagePosted"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/avatar"  />
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Message"
-            android:textSize="14dp"
-            android:fontFamily="@font/robotoregular"
-            android:layout_marginLeft="8dp"
-            android:layout_marginBottom="4dp"
-            android:maxLines="3"/>
-    </RelativeLayout>
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/textViewUser"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="6dp"
+                android:textSize="16dp"
+                android:gravity="left"
+                android:fontFamily="@font/robotobold"
+                android:text="User"
+                android:ellipsize="end"
+                android:maxLines="1"/>
+
+            <TextView
+                android:id="@+id/textViewMessage"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="2dp"
+                android:gravity="left"
+                android:textSize="14dp"
+                android:text="Content"
+                android:fontFamily="@font/robotoregular"
+                android:ellipsize="end"
+                android:maxLines="3"/>
+        </LinearLayout>
+    </LinearLayout>
 
 
-</LinearLayout>
+</com.google.android.material.card.MaterialCardView>
 
+</FrameLayout>

@@ -93,7 +93,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             return;
         }
 
-
         progressDialog.setMessage("Registering User...");
         progressDialog.show();
         System.out.println(email +" email "+password+" password");
