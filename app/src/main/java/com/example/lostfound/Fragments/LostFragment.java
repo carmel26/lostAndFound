@@ -84,7 +84,10 @@ public class LostFragment extends Fragment{
                 postList.clear();
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     Post post = postSnapshot.child("INFO").getValue(Post.class);
-                    postList.add(post);
+
+                    if (post.getStatus().equalsIgnoreCase("false")){
+                        postList.add(post);
+                    }
                 }
                 Collections.reverse(postList);
                 FragmentActivity parentActivity = (FragmentActivity) view.getContext();

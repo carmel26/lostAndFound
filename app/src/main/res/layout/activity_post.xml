@@ -34,7 +34,8 @@
                 android:layout_marginRight="5dp"
                 android:textSize="20dp"
                 android:gravity="center|top"
-                android:hint="@string/hint_title"/>
+                android:hint="@string/hint_title"
+                android:background="@color/backgroundLigth"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 

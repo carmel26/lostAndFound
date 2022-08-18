@@ -9,9 +9,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/launcher"
+        android:icon="@drawable/iconnewlostfound"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/launcher_round"
+        android:roundIcon="@drawable/iconnewlostfound"
         android:supportsRtl="true"
         android:theme="@style/LostFoundTheme">
 

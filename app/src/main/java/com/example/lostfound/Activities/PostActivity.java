@@ -140,7 +140,7 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
         String pathTes = "Post/"+System.currentTimeMillis();
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
 // this will compress an image that the uplaod and download would be faster
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        bitmap.compress(Bitmap.CompressFormat.PNG, 150, baos);
         byte[] data = baos.toByteArray();
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageReference = storage.getReference();

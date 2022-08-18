@@ -12,6 +12,7 @@
     <color name="tabTextColor">#fff</color>
     <color name="tabIndicatorColor">#40D2FF</color>
     <color name="blackText">#000000</color>
+    <color name="backgroundLigth">#f5f5f5</color>
 
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
