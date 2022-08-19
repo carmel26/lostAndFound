@@ -42,6 +42,7 @@ import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
+import java.util.Date;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -140,7 +141,7 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
         String pathTes = "Post/"+System.currentTimeMillis();
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
 // this will compress an image that the uplaod and download would be faster
-        bitmap.compress(Bitmap.CompressFormat.PNG, 150, baos);
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
         byte[] data = baos.toByteArray();
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageReference = storage.getReference();
@@ -234,7 +235,7 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
                         // Upload to firebase
                         String postUID = databaseReference.push().getKey();
                         User user = postSnapshot.child("INFO").getValue(User.class);
-                        Post post = new Post(user.getName(),title,desc,user.getPhoneNum(),userId,postUID,userEmail,"false");
+                        Post post = new Post(user.getName(),title,desc,user.getPhoneNum(),userId,postUID,userEmail,"false",new Date().getTime()+"");
                         databaseReference = FirebaseDatabase.getInstance().getReference("/" + route);
                         databaseReference.child(postUID).child("INFO").setValue(post);
                         uploadFile(postUID);

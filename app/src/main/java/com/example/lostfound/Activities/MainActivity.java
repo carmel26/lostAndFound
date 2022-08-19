@@ -1,7 +1,11 @@
 package com.example.lostfound.Activities;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,10 +27,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
@@ -56,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public static final String POST_ROUTE = "com.example.lostfound.postpage";
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,11 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(this, LoginActivity.class));
         }
 
-
-
-
-
-//         ///////////
+//       check if the user has a profile or not
         databaseReference = FirebaseDatabase.getInstance().getReference("/USERS/" + firebaseAuth.getCurrentUser().getUid()  + "/INFO/");
 
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -95,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-// ///////////////////////////////////////////////////////////////////
+//        notificationPreview("test1","first notification", "And this is my content");
 
         // Initialize
         searchView = (SearchView) findViewById(R.id.searchView);
@@ -196,4 +200,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
     }
+//
+//    public void notificationPreview(String channelID, String title, String content){
+//
+//        Intent snoozeIntent = new Intent(this, MainActivity.class);
+//        snoozeIntent.setAction(Intent.ACTION_SCREEN_ON);
+//        snoozeIntent.putExtra(channelID, 0);
+//        PendingIntent snoozePendingIntent =
+//                PendingIntent.getBroadcast(this, 0, snoozeIntent, 0);
+//
+//
+//        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelID)
+//                .setSmallIcon(R.drawable.lostandfoundsmalllogo)
+//                .setContentTitle(title)
+//                .setContentText(content)
+//                .setStyle(new NotificationCompat.BigTextStyle()
+//                        .bigText(content))
+//                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+//                .addAction(R.drawable.lostandfoundsmalllogo, getString(R.string.app_name),
+//                        snoozePendingIntent);
+//
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+//            CharSequence name = getString(R.string.app_name);
+//            String description = getString(R.string.app_name);
+//            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+//            NotificationChannel channel = new NotificationChannel(channelID, name, importance);
+//            channel.setDescription(description);
+//            // Register the channel with the system; you can't change the importance
+//            // or other notification behaviors after this
+//            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+//            notificationManager.createNotificationChannel(channel);
+//        }
+//
+//        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+////     notificationId is a unique int for each notification that you must define
+//        notificationManager.notify(200, builder.build());
+//    }
 }

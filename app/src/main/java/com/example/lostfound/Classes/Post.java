@@ -2,9 +2,11 @@ package com.example.lostfound.Classes;
 
 // Post class to hold a post information e.g. user, title, description ...
 
+import java.util.Date;
+
 public class Post {
 
-    private String title, user, description, phoneNum, userId, postId, email,status;
+    private String title, user, description, phoneNum, userId, postId, email,status,timedata;
 
     public Post(){
 
@@ -13,7 +15,7 @@ public class Post {
        this.status = status;
     }
 
-    public Post(String user, String title, String description, String phoneNum, String userId, String postId, String email, String status) {
+    public Post(String user, String title, String description, String phoneNum, String userId, String postId, String email, String status, String timedata) {
         this.user = user;
         this.title = title;
         this.description = description;
@@ -22,6 +24,7 @@ public class Post {
         this.postId = postId;
         this.email = email;
         this.status = status;
+        this.timedata = timedata;
     }
 
     public String getUser(){
