@@ -1,25 +1,19 @@
 package com.example.lostfound.Activities;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
-import androidx.fragment.app.FragmentActivity;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.lostfound.Adapters.PostAdapter;
 import com.example.lostfound.Classes.Post;
 import com.example.lostfound.R;
 import com.google.firebase.database.DataSnapshot;
@@ -29,7 +23,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class SplashScreen extends AppCompatActivity {
@@ -70,7 +63,7 @@ public class SplashScreen extends AppCompatActivity {
 
                     Post post = postSnapshot.child("INFO").getValue(Post.class);
 
-                    if (post.getStatus().equalsIgnoreCase("false") && numberLost < 1){
+                    if (post.getStatus().equalsIgnoreCase("false") && numberLost < 3){
                         numberLost = numberLost +1;
                         postList.add(post);
                         notificationPreview(post.getPostId(),"LOST: "+post.getTitle(), post.getDescription());
@@ -96,7 +89,7 @@ public class SplashScreen extends AppCompatActivity {
 
                     Post post = postSnapshot.child("INFO").getValue(Post.class);
 
-                    if (post.getStatus().equalsIgnoreCase("false") && numberFound < 1){
+                    if (post.getStatus().equalsIgnoreCase("false") && numberFound < 3){
                         numberFound = numberFound+1;
                         postList.add(post);
                         notificationPreview(post.getPostId(),"FOUND: "+post.getTitle(), post.getDescription());
@@ -116,7 +109,7 @@ public class SplashScreen extends AppCompatActivity {
 
     public void notificationPreview(String channelID, String title, String content){
 
-        Intent snoozeIntent = new Intent(this, MainActivity.class);
+        Intent snoozeIntent = new Intent(this, MessageActivity.class);
         snoozeIntent.setAction(Intent.ACTION_SCREEN_ON);
         snoozeIntent.setAction("Test " + System.currentTimeMillis());
         snoozeIntent.putExtra(channelID, 0);
@@ -131,8 +124,9 @@ public class SplashScreen extends AppCompatActivity {
                 .setStyle(new NotificationCompat.BigTextStyle()
                         .bigText(content))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                .addAction(R.drawable.lostandfoundsmalllogo, "OK",
-                        snoozePendingIntent);
+//                .addAction(R.drawable.lostandfoundsmalllogo, "OK",
+//                        cancelNotification(this,(int) Math.random()))
+                .setAutoCancel(true);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence name = getString(R.string.app_name);
@@ -150,8 +144,16 @@ public class SplashScreen extends AppCompatActivity {
                     builder.build()) ;
         }
 
+
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-//     notificationId is a unique int for each notification that you must define
-        notificationManager.notify(200, builder.build());
+//      notificationId is a unique int for each notification that you must define
+        notificationManager.notify((int) Math.random(), builder.build());
+    }
+
+    public static PendingIntent cancelNotification(Context ctx, int notifyId) {
+        String ns = Context.NOTIFICATION_SERVICE;
+        NotificationManager nMgr = (NotificationManager) ctx.getSystemService(ns);
+        nMgr.cancel(notifyId);
+        return null;
     }
 }

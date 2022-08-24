@@ -18,6 +18,7 @@ public class Message {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy:MM:dd HH:mm:ss", Locale.getDefault());
         String currentDateandTime = sdf.format(new Date());
         this.time = currentDateandTime;
+        this.statusReadOrNot = "false";
     }
 
     public String getText() {
@@ -40,6 +41,10 @@ public class Message {
         this.user = user;
     }
 
+    public void setStatusReadOrNot(String statusReadOrNot) {
+        this.statusReadOrNot = statusReadOrNot;
+    }
+
     public void setTime(String time) {
         this.time = time;
     }
@@ -47,4 +52,5 @@ public class Message {
     private String text;
     private String user;
     private String time;
+    private String statusReadOrNot;
 }
